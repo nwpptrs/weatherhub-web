@@ -288,19 +288,19 @@ onBeforeUnmount(() => {
             <input
               v-model="newCity.name"
               type="text"
-              placeholder="ชื่อเมือง (เช่น Chiang Mai)"
+              placeholder="ชื่อเมือง (เช่น เชียงใหม่)"
               class="border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
             />
             <div class="grid grid-cols-2 gap-3">
               <input
                 v-model="newCity.lat"
-                type="text"
+                type="number"
                 placeholder="Latitude (คลิกบนแผนที่ได้)"
                 class="border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
               />
               <input
                 v-model="newCity.lon"
-                type="text"
+                type="number"
                 placeholder="Longitude (คลิกบนแผนที่ได้)"
                 class="border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-lg p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
               />
