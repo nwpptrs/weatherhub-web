@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import L from "leaflet";
+import iconUrl from "leaflet/dist/images/marker-icon.png";
+import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
+import shadowUrl from "leaflet/dist/images/marker-shadow.png";
 import locationApi from "../api/locations.vue";
 import weatherApi from "../api/weather.vue";
 import Swal from "sweetalert2";
@@ -16,11 +19,12 @@ const loadingError = ref(null);
 const isDarkMode = ref(document.documentElement.classList.contains("dark"));
 let tempMarker = null;
 
-const handleThemeChange = () => {
-  const newDarkMode = document.documentElement.classList.contains("dark");
-  if (isDarkMode.value === newDarkMode) return;
-  isDarkMode.value = newDarkMode;
-};
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: iconRetinaUrl,
+  iconUrl: iconUrl,
+  shadowUrl: shadowUrl,
+});
 
 const fetchLocations = async () => {
   loading.value = true;
@@ -79,7 +83,7 @@ const handleAddCity = async () => {
     console.error("Error adding city:", err);
     Swal.fire(
       "เกิดข้อผิดพลาด",
-      "ไม่สามารถเพิ่มเมืองได้ หรือ ไม่มีสิทธิ์",
+      "ไม่สามารถเพิ่มเมืองได้ โปรดเข้าสู่ระบบ",
       "error"
     );
   } finally {

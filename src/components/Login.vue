@@ -118,7 +118,7 @@ const handleLogin = async () => {
       <h2
         class="text-3xl font-extrabold text-gray-900 dark:text-white text-center mb-6"
       >
-        Login (Admin Mockup)
+        Login
       </h2>
 
       <form @submit.prevent="handleLogin" class="space-y-6">
@@ -133,7 +133,7 @@ const handleLogin = async () => {
             type="text"
             id="username"
             v-model="username"
-            placeholder="ป้อนชื่อผู้ใช้งาน"
+            placeholder="ป้อนชื่อผู้ใช้งาน (admin)"
             required
             class="block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
           />

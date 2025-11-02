@@ -373,7 +373,7 @@ const rainOptions = computed(() => ({
     class="p-4 md:p-8 min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors"
   >
     <h1 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
-      เทียบสภาพอากาศ (Weather Comparison)
+      Weather Comparison
     </h1>
 
     <div
